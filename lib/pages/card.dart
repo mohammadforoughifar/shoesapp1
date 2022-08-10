@@ -1,5 +1,3 @@
-
-
 import 'package:line_icons/line_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:store_shoes/json/constant.dart';
@@ -246,16 +244,50 @@ class _State extends State<CardPage> {
   Widget getPrompt() {
     var size = MediaQuery.of(context).size;
     return Padding(
-      padding: EdgeInsets.only(top:30,right: 10, left: 10),
+      padding: EdgeInsets.only(top: 30, right: 10, left: 10),
       child: Row(
         children: [
           Container(
-            width: (size.width-20),
+            width: (size.width - 20),
             height: 55,
             decoration: BoxDecoration(
-              color: primary.withOpacity(0.9),
+                color: primary.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(8)),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    width: (size.width-30)*0.7,
+                    child: TextField(
+                      decoration: InputDecoration(
+                          //labelText: 'کد تخفیف',
+                          hintText: ' کد تخفیف',
+border: InputBorder.none,
+                      disabledBorder:OutlineInputBorder(
+                       borderSide: BorderSide.none
+                      ),
+                    ),
+                  )
+                  ),
+                ),
+               Flexible(
+                 child: Padding(
+                   padding: const EdgeInsets.only(right: 3.0),
+                   child: Container(
+                     width: (size.width)*0.2,
+                     height:50 ,
+                     decoration: BoxDecoration(
+                       borderRadius: BorderRadius.circular(8),
+                       color: primary.withOpacity(0.4)
+                     ),
+                     child: Center(child: Text('اعمال',style: TextStyle(color: white,fontSize: 18),)),
+                   ),
+                 ),
+               )
+              ],
             ),
-            child: Row(),
           ),
           Flexible(child: Container())
         ],
